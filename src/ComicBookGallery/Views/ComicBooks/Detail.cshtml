@@ -1,9 +1,11 @@
 ﻿@model ComicBookGallery.Models.ComicBook
 @{
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = Model.DesplayText;
+    ViewBag.ShowBackBar = true;
 }
 
 <h2>@Model.DesplayText</h2>
+
 
 <div class="row">
     <div class="col-md-6">
