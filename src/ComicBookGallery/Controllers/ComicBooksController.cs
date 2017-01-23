@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ComicBookGallery.Data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,9 +9,10 @@ namespace ComicBookGallery.Controllers
 {
     public class ComicBooksController: Controller
     {
+        ComicBookRepository comicBookRespository = new ComicBookRepository();
         public ActionResult Detail()
         {
-            return Content("Welcome!");
+            return View(comicBookRespository);
         }
     }
 }
