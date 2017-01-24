@@ -15,15 +15,18 @@
                    
            @for (var i = 0; i< Model.Count; i++)
                {
-                <li>
-                    <h4>@Html.ActionLink(Model[i].SeriesTitle, "Detail", new { id = Model[i].Id })</h4>
+               <li>
+                   <h4>@Model[i].SeriesTitle</h4>
+               </li>
+                <li>                    
+                    <h4>@Html.ActionLink(("#"+Model[i].IssueNumber.ToString()), "Detail", new { id = Model[i].Id })</h4>
                 </li>
                 for (var j = i + 1; j < Model.Count; j++)
                     {
                     if (Model[j].SeriesTitle == Model[i].SeriesTitle)
                         {
                         <li>
-                            <h4>@Html.ActionLink(Model[j].SeriesTitle, "Detail", new { id = Model[j].Id })</h4>
+                            <h4>@Html.ActionLink(("#" + Model[j].IssueNumber.ToString()), "Detail", new { id = Model[j].Id })</h4>
                         </li> 
                         i=j;
                          }
