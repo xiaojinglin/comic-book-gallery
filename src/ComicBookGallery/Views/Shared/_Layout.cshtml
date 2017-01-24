@@ -27,14 +27,22 @@
         </div>
     </div>
 
-    @if (ViewBag.ShowBackBar != null && ViewBag.ShowBackBar)
-    {
+    
         <div class="backbar">
             <div class="container">
-                <a class="btn btn-default" href="/">Return to List</a>
+@if (ViewBag.ShowIndexBar)
+{
+                <a class="btn btn-default" href="/">Home</a>
+
+}
+@if (ViewBag.ShowSeriesBar)
+{
+    <a class="btn btn-default" href="/ComicBooks/SeriesIndex">Series List</a>
+}
+
             </div>
         </div>
-    }
+    
     
 
     <div class="container body-content">

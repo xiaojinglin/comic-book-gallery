@@ -1,0 +1,35 @@
+﻿@model List<ComicBookGallery.Models.ComicBook>
+@{
+    ViewBag.Title = "SeriesIndex";
+    ViewBag.ShowIndexBar = true;
+    ViewBag.ShowSeriesBar = false;
+}
+
+<h2>@ViewBag.Title</h2>
+
+
+
+<div class="row">
+    <div class="col-md-12">
+        <ul class="series-list">
+                   
+           @for (var i = 0; i< Model.Count; i++)
+               {
+                <li>
+                    <h4>@Html.ActionLink(Model[i].SeriesTitle, "Detail", new { id = Model[i].Id })</h4>
+                </li>
+                for (var j = i + 1; j < Model.Count; j++)
+                    {
+                    if (Model[j].SeriesTitle == Model[i].SeriesTitle)
+                        {
+                        <li>
+                            <h4>@Html.ActionLink(Model[j].SeriesTitle, "Detail", new { id = Model[j].Id })</h4>
+                        </li> 
+                        i=j;
+                         }
+                     }
+                }
+            
+        </ul>
+    </div>
+</div>
